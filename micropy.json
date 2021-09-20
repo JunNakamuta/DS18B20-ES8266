@@ -1,0 +1,8 @@
+{
+    "name": "DS18B20",
+    "stubs": {},
+    "dev-packages": {
+        "micropy-cli": "*"
+    },
+    "packages": {}
+}

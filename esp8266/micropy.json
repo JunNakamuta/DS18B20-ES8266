@@ -1,0 +1,8 @@
+{
+    "name": "esp8266",
+    "stubs": {},
+    "dev-packages": {
+        "micropy-cli": "*"
+    },
+    "packages": {}
+}
