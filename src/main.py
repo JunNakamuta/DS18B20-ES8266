@@ -11,7 +11,7 @@ LED_PIN = 2  # Arduino: D4
 # JST=UTC+9
 UTC_OFFSET = 9
 
-wdt = WDT()  # esp8266ではTimeout値は設定できない
+# wdt = WDT()  # esp8266ではTimeout値は設定できない
 # watchDocを有効にすると、Uploadできなくなるので注意
 # UploadするためにはFirmwareを再度書き込む必要がある（まっさらにする）
 
@@ -31,7 +31,7 @@ while(True):
     for rom in roms:
         temperature = ds.read_temp(rom)
         # print('Temp:[%03.02f]C ' % temperature, end='\n')
-        Message = '      {:03.3f}`C'.format(temperature)
+        Message = '      {:03.2f}C'.format(temperature)
         display.fill(0)
         display.rect(0, 0, 128, 32, 1)
         display.text('Temperature:', 2, 2, 1)
@@ -50,5 +50,5 @@ while(True):
     led = Pin(LED_PIN, Pin.OUT)
     led.off()
     time.sleep_ms(10)
-    wdt.feed()  # WatchDoc にfeedする
+    # wdt.feed()  # WatchDoc にfeedする
     led.on()
